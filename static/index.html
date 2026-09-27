@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go websocker</title>
+</head>
+<body>
+    
+    <script>
+        var ws = new WebSocket("ws://localhost:3000/ws")
+        ws.onopen = ()=>{
+            console.log("connected")
+        }
+        ws.onmessage = (msg)=>{
+            console.log("server message",msg.data)
+
+        }
+        ws.onclose = ()=>{
+            console.log("disconnected   ")
+        }
+        window.ws = ws
+    </script>
+</body>
+</html>
